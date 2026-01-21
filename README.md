@@ -1,73 +1,100 @@
-# React + TypeScript + Vite
+# JMDB - Movie Search Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Project Overview
 
-Currently, two official plugins are available:
+JMDB is a modern movie search application built with React, TypeScript, and Vite. It allows users to search for movies and view details, providing a seamless and responsive experience. This project serves as a portfolio piece to showcase skills in frontend development and API integration.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
 
-## React Compiler
+-   **Movie Search:** Search for movies using the TMDB API.
+-   **Movie Details:** View essential information for each movie, including poster, title, rating, language, and release year.
+-   **Responsive Design:** Optimized for various screen sizes using Tailwind CSS.
+-   **Loading & Error States:** Clear feedback for users during API calls and error handling.
+-   **Debounced Search:** Efficient API calls with debounced search input to prevent excessive requests.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Technologies Used
 
-## Expanding the ESLint configuration
+-   **Frontend:**
+    -   [React 19.2.0](https://react.dev/)
+    -   [TypeScript](https://www.typescriptlang.org/docs/)
+    -   [Vite](https://vitejs.dev/)
+-   **Styling:**
+    -   [Tailwind CSS v4](https://tailwindcss.com/docs)
+    -   [Flowbite React UI components](https://flowbite-react.com/)
+-   **API Integration:**
+    -   TMDB API
+    -   Appwrite (Though not explicitly used for movie fetching in the provided `App.tsx`, it's listed in `AGENTS.md` for potential future use or other project aspects).
+-   **Utilities:**
+    -   [react-use](https://github.com/streamich/react-use) (for `useDebounce`)
+-   **Code Quality:**
+    -   ESLint 9
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Getting Started
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+Follow these instructions to get a copy of the project up and running on your local machine for development and testing purposes.
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+### Prerequisites
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+Before you begin, ensure you have the following installed:
+-   Node.js (LTS version recommended)
+-   npm (Node Package Manager)
+
+### Installation
+
+1.  **Clone the repository:**
+    ```bash
+    git clone https://github.com/your-username/JMDB.git
+    cd JMDB
+    ```
+2.  **Install dependencies:**
+    ```bash
+    npm install
+    ```
+3.  **Environment Variables:**
+    Create a `.env.local` file in the root of the project and add your TMDB API key:
+    ```
+    VITE_TMDB_API_KEY=YOUR_TMDB_API_KEY
+    ```
+    You can obtain a TMDB API key from [The Movie Database (TMDB) website](https://www.themoviedb.org/documentation/api).
+
+### Running Locally
+
+To start the development server:
+```bash
+npm run dev
 ```
+Open your browser and navigate to `http://localhost:5173` (or the port indicated in your terminal).
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### Build for Production
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+To build the application for production:
+```bash
+npm run build
 ```
+This will generate a `dist` folder containing the optimized production build.
+
+### Linting & Type Checking
+
+-   **Run ESLint on all files:**
+    ```bash
+    npm run lint
+    ```
+-   **Type check without emitting files:**
+    ```bash
+    npx tsc --noEmit
+    ```
+
+## Usage
+
+(Describe how a user would interact with the application, e.g., "Enter a movie title in the search bar to find relevant movies. Click on a movie card to view more details (if implemented).")
+
+## Screenshots
+
+(Add screenshots of your application here to showcase its features and design.)
+
+## Acknowledgements
+
+-   [The Movie Database (TMDB)](https://www.themoviedb.org/) for the movie data API.
+-   [React](https://react.dev/), [TypeScript](https://www.typescriptlang.org/docs/), [Vite](https://vitejs.dev/) communities.
+-   [Tailwind CSS](https://tailwindcss.com/) for utility-first CSS.
+-   [Flowbite React](https://flowbite-react.com/) for UI components.
