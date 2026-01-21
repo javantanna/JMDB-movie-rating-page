@@ -86,7 +86,7 @@ This will generate a `dist` folder containing the optimized production build.
 
 ## Usage
 
-(Describe how a user would interact with the application, e.g., "Enter a movie title in the search bar to find relevant movies. Click on a movie card to view more details (if implemented).")
+![banner](https://raw.githubusercontent.com/javantanna/JMDB-movie-rating-page/git-assets/screenshot.png)
 
 ## Screenshots
 
